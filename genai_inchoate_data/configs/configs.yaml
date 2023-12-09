@@ -1,0 +1,9 @@
+
+file_extension_mapping:
+    pdf: PDFParserFactory
+    json: JSONParserFactory
+    txt: TextParserFactory
+    png: ImageParserFactory
+    jpg: ImageParserFactory
+    docx: WordParserFactory
+    xlsx: ExcelParserFactory

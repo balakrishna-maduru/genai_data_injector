@@ -1,0 +1,29 @@
+Here are some questions that will help me understand your needs better:
+
+1. What type of data do you want to represent in the Excel spreadsheet?
+
+Financial data: Budget, expense tracker, invoice, etc.
+Inventory data: Product list, stock levels, purchase orders, etc.
+Customer data: Contact information, purchase history, etc.
+Project data: Tasks, deadlines, budgets, etc.
+Time tracking data: Hours worked, breaks, activities, etc.
+Other: Please specify the type of data you want to represent.
+2. Do you need any specific formulas or functions in the sample?
+
+Basic formulas: SUM, AVERAGE, COUNT, etc.
+Logical formulas: IF, AND, OR, etc.
+Lookup functions: VLOOKUP, INDEX MATCH, etc.
+Financial formulas: PMT, IRR, NPV, etc.
+Other: Please specify the formulas or functions you need.
+3. Do you need any specific formatting in the sample?
+
+Charts and graphs: Bar charts, pie charts, line graphs, etc.
+Conditional formatting: Highlight cells based on specific criteria.
+Data validation: Restrict the type of data that can be entered in cells.
+Other: Please specify the formatting you need.
+4. Are there any specific features you need the sample to have?
+
+Pivot tables: Summarize and analyze large amounts of data.
+Filters: Sort and display data based on specific criteria.
+Macros: Automate repetitive tasks.
+Other: Please specify the features you need.
