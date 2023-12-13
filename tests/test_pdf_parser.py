@@ -5,7 +5,6 @@ from genai_inchoate_data.data_parser.pdf_parser import PDFParser
 
 class TestPDFParser(unittest.TestCase):
     def setUp(self):
-        # resource_dir = pkg_resources.resource_filename(__name__, 'resources')
         self.pdf_path = os.path.join(resource_path, 'input/sample.pdf')
         self.output_path = os.path.join(resource_path, 'output')
         self.parser = PDFParser(self.pdf_path)

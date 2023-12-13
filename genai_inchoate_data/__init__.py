@@ -1,0 +1,1 @@
+from genai_inchoate_data.data_parser.parser import Parser as parser

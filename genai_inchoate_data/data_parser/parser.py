@@ -1,9 +1,9 @@
-from pdf_parser import  PDFParser
-from json_parser import JSONParser
-from text_parser import TextParser
-from image_parser import ImageParser
-from word_parser import WordParser
-from excel_parser import ExcelParser
+from genai_inchoate_data.data_parser.pdf_parser import  PDFParser
+from genai_inchoate_data.data_parser.json_parser import JSONParser
+from genai_inchoate_data.data_parser.text_parser import TextParser
+from genai_inchoate_data.data_parser.image_parser import ImageParser
+from genai_inchoate_data.data_parser.word_parser import WordParser
+from genai_inchoate_data.data_parser.excel_parser import ExcelParser
 
 class Parser:
     def __init__(self, file_path):
@@ -18,11 +18,11 @@ class Parser:
             'xlsx': ExcelParser,
         }
 
-    def create_parser(self):
+    def extract_text(self):
         file_extension = self.get_file_extension()
         factory_class = self.factory_map.get(file_extension)
         if factory_class:
-            return factory_class.create_parser(self.file_path)
+            return factory_class(self.file_path).extract_text()
         else:
             raise ValueError(f"Unsupported file type: {file_extension}")
 

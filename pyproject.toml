@@ -2,28 +2,26 @@
 [tool.poetry]
 name = "genai_inchoate_data"
 version = "0.1.0"
-description = "Description of your project."
-authors = ["Your Name <your@email.com>"]
+description = "The Document Parser Library is a Python library that provides a set of classes for parsing various types of documents, including PDFs, JSON files, text files, images, Word documents, and Excel spreadsheets. The library is designed to be extensible, allowing users to dynamically create parser objects based on the file type extension."
+authors = ["Balakrishna Maduru <balakrishnamaduru@gmail.com>"]
 license = "MIT"
-
 
 [tool.poetry.dependencies]
 python = "^3.10"
 poetry = "^1.7.1"
-# Add more dependencies as needed.
 pypdf2 = "^3.0.1"
 pymupdf = "^1.23.7"
 tabula-py = "^2.9.0"
 python-docx = "^1.1.0"
 pillow = "^10.1.0"
+pymongo = "^4.6.1"
+mongomock = "^4.1.2"
+pydantic = "^2.5.2"
 
 [tool.poetry.dev-dependencies]
-# Add test-specific dependencies here.
-# Example: "pytest" is used as a placeholder; replace it with your actual test dependencies.
 pytest = "^6.2"
 
 [tool.poetry.scripts]
-# Define an entry point for running tests.
 test = "pytest tests"
 
 [tool.poetry.group.new_group.dependencies]
