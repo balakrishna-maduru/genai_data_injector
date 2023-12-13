@@ -45,8 +45,10 @@ class PDFParser(DataParser):
                 page_text = pdf.pages[page].extract_text()
                 self.metadata['page_label'] = page+1
                 print(self.metadata)
+                doc_id = self.get_document_id()
                 docs.append({
-                    "doc_id":self.get_document_id(),
+                    "_id": doc_id,
+                    "doc_id":doc_id,
                     "text":page_text,
                     "metadata":copy.deepcopy(self.metadata),
                     "hash":self.generate_hash(page_text)})
