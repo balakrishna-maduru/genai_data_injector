@@ -2,7 +2,7 @@ import os
 import unittest
 from pymongo import MongoClient
 from mongomock import MongoClient as MockMongoClient
-from genai_inchoate_data.store.mongo_db import MongoDB 
+from genai_inchoate_data.data_store.mongo_db import MongoDB 
 
 class TestMongoDB(unittest.TestCase):
     @classmethod

@@ -74,6 +74,7 @@ class FileSystem:
             data['created'] = datetime.fromtimestamp(data['created']).isoformat()
             data['mtime'] = datetime.fromtimestamp(data['mtime']).isoformat()
         data['type'] = os.path.splitext(path)[-1]
+        data['file_name'] = os.path.basename(path)
         return data
 
     def checksum(self, path, target_fs=0):
