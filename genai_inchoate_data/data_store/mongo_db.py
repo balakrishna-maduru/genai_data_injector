@@ -1,5 +1,5 @@
 from pymongo import MongoClient
-from genai_inchoate_data.store.store import StoreInterface
+from genai_inchoate_data.data_store.base_store import StoreInterface
 
 
 class MongoDB(StoreInterface):
