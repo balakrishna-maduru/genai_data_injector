@@ -2,6 +2,8 @@
 
 The Document Parser Library is a Python library that provides a set of classes for parsing various types of documents, including PDFs, JSON files, text files, images, Word documents, and Excel spreadsheets. The library is designed to be extensible, allowing users to dynamically create parser objects based on the file type extension.
 
+![Life Cycle](./images/Life_cycle.png?raw=true "Title")
+
 ## Table of Contents
 
 - [Installation](#installation)

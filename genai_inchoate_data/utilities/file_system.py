@@ -2,6 +2,8 @@ import os
 import fsspec
 from datetime import datetime
 
+from numpy import size
+
 def get_file_system(filesystem_type, **kwargs):
         return fsspec.filesystem(filesystem_type, **kwargs)
 
@@ -68,13 +70,16 @@ class FileSystem:
         return self.file_system.exists(path, **kwargs)
 
     def info(self, path, convert_date=True, target_fs=0, **kwargs):
+        data = {}
         self.target_fs = target_fs
-        data = self.file_system.info(path, **kwargs)
+        fs_meta = self.file_system.info(path, **kwargs)
         if convert_date:
-            data['created'] = datetime.fromtimestamp(data['created']).isoformat()
-            data['mtime'] = datetime.fromtimestamp(data['mtime']).isoformat()
-        data['type'] = os.path.splitext(path)[-1]
+            data['creation_date'] = datetime.fromtimestamp(fs_meta['created']).isoformat()
+            data['last_modified_date'] = datetime.fromtimestamp(fs_meta['mtime']).isoformat()
+        data['file_type'] = os.path.splitext(path)[-1]
         data['file_name'] = os.path.basename(path)
+        data['file_size'] = fs_meta['size']
+        data['file_path'] = fs_meta['name']
         return data
 
     def checksum(self, path, target_fs=0):

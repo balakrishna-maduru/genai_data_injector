@@ -1,21 +1,20 @@
 import re
 import copy
 import hashlib
-from pydoc import doc
-
-from sqlalchemy import false
-from genai_inchoate_data.data_parser.pdf_parser import  PDFParser
+from genai_inchoate_data.data_store.store import Store
+from genai_inchoate_data.data_parser.pdf_parser import PDFParser
 from genai_inchoate_data.data_parser.json_parser import JSONParser
 from genai_inchoate_data.data_parser.text_parser import TextParser
-from genai_inchoate_data.data_parser.image_parser import ImageParser
 from genai_inchoate_data.data_parser.word_parser import WordParser
+from genai_inchoate_data.data_parser.image_parser import ImageParser
 from genai_inchoate_data.data_parser.excel_parser import ExcelParser
-from genai_inchoate_data.data_store.store import Store
 from genai_inchoate_data.utilities.configurations import Configurations
 
+
 class Parser:
+
     def __init__(self, store_config):
-        if isinstance(store_config,dict):
+        if isinstance(store_config, dict):
             self.store_config = Configurations(store_config)
         self.factory_map = {
             'pdf': PDFParser,
@@ -28,6 +27,9 @@ class Parser:
         }
         self.store = Store().get(self.store_config)
 
+    def insert_documents(self, collection_name, documents):
+        self.store.insert_documents(collection_name, documents)
+        
 
     def get_documents(self, from_date=None, to_date=None, file_name_pattern=None, fetch_only_metadata=False):
         self.output_documents = []
@@ -39,12 +41,15 @@ class Parser:
         elif to_date:
             query['load_details.date'] = {'$lte': to_date}
         if file_name_pattern:
-            query['metadata.file_name'] = {'$regex': re.compile(file_name_pattern)}
-        
+            query['metadata.file_name'] = {
+                '$regex': re.compile(file_name_pattern)}
+
         if not query:
-            documents = self.store.find_document(self.store_config.collection_name,query) # type: ignore
+            documents = self.store.find_document(
+                self.store_config.collection_name, query)  # type: ignore
         else:
-            documents = self.store.find_document(self.store_config.collection_name).limit(limit) # type: ignore
+            documents = self.store.find_document(
+                self.store_config.collection_name).limit(limit)  # type: ignore
         if fetch_only_metadata:
             return documents
         self.extract_text_for_each_document(documents)
@@ -53,24 +58,23 @@ class Parser:
     def extract_text_for_each_document(self, documents):
         for document in documents:
             self.iterate_documents(document)
-    
 
     def iterate_documents(self, document):
-        print(f'document : ${document}')
         temp_document = copy.deepcopy(document)
         docs = self.extract_text(document.get('metadata').get('name'))
         if isinstance(docs, dict):
             for page_number, text in docs.items():
                 temp_document['_id'] = f'{document.get("_id")}#{page_number}'
+                temp_document['doc_id'] = f'{document.get("_id")}#{page_number}'
                 temp_document['metadata']['page_label'] = page_number
                 self.add_text_and_hash(temp_document, text)
         else:
             self.add_text_and_hash(temp_document, docs)
-    
+
     def add_text_and_hash(self, temp_document, text):
         temp_document['text'] = text
         temp_document['hash'] = self.generate_hash(text)
-        self.output_documents.append(temp_document)
+        self.output_documents.append(copy.deepcopy(temp_document))
 
     def extract_text(self, file_name):
         file_extension = file_name.split('.')[-1].lower()

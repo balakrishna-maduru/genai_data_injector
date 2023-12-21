@@ -1,0 +1,41 @@
+{
+    "index_store/data": {
+        "18192536-3fb9-4c21-b766-6226c7cb624b": {
+            "__type__": "vector_store",
+            "__data__": {
+                "index_id": "18192536-3fb9-4c21-b766-6226c7cb624b",
+                "summary": null,
+                "nodes_dict": {
+                    "7f44d9cd-188f-4aec-bf05-338c0644f695": "7f44d9cd-188f-4aec-bf05-338c0644f695",
+                    "351b6309-62e4-4ffb-b751-843b0e8b4dc7": "351b6309-62e4-4ffb-b751-843b0e8b4dc7",
+                    "8d129bba-9a37-4cbf-84e4-1898ec46c804": "8d129bba-9a37-4cbf-84e4-1898ec46c804",
+                    "ee332da0-92ee-43b4-9370-559aaafc1268": "ee332da0-92ee-43b4-9370-559aaafc1268",
+                    "ebe6b918-30e2-43cf-b992-3317cf22202b": "ebe6b918-30e2-43cf-b992-3317cf22202b",
+                    "368f429e-4d28-4f5a-96bf-422436eb1df8": "368f429e-4d28-4f5a-96bf-422436eb1df8",
+                    "3925ba36-e8c4-49e3-b278-24a4b0172a8d": "3925ba36-e8c4-49e3-b278-24a4b0172a8d",
+                    "c9f48f7a-7d5f-407b-9838-977a85f62b4b": "c9f48f7a-7d5f-407b-9838-977a85f62b4b",
+                    "f8e93ac2-f5a3-4f97-8f74-3fab37443705": "f8e93ac2-f5a3-4f97-8f74-3fab37443705",
+                    "37baa284-448e-4ee4-8a0e-7b9959c8f87f": "37baa284-448e-4ee4-8a0e-7b9959c8f87f",
+                    "36bf5e22-debd-425c-b75b-9a5a01546568": "36bf5e22-debd-425c-b75b-9a5a01546568",
+                    "48ca92e8-844c-4f92-86b4-3a06b08881f7": "48ca92e8-844c-4f92-86b4-3a06b08881f7",
+                    "073b4e7d-7844-4cf4-9d96-6ae67b6aab94": "073b4e7d-7844-4cf4-9d96-6ae67b6aab94",
+                    "220c1784-0f40-46c6-b094-0dd6f5ac83bd": "220c1784-0f40-46c6-b094-0dd6f5ac83bd",
+                    "e91a3880-efda-481d-8837-3c8489ee5cf0": "e91a3880-efda-481d-8837-3c8489ee5cf0",
+                    "c65ee363-5a4d-4950-9311-07dbbf0d283e": "c65ee363-5a4d-4950-9311-07dbbf0d283e",
+                    "ac4ec06d-d386-41e7-a301-58e4ba55892f": "ac4ec06d-d386-41e7-a301-58e4ba55892f",
+                    "cc613dbd-e092-47ea-87a3-0fa4bcba0a97": "cc613dbd-e092-47ea-87a3-0fa4bcba0a97",
+                    "459fe1a9-8239-4603-be80-b6d695137b23": "459fe1a9-8239-4603-be80-b6d695137b23",
+                    "6ece5584-69a4-463c-8c81-ee28701a61b8": "6ece5584-69a4-463c-8c81-ee28701a61b8",
+                    "59695d19-9994-4449-821b-dfe6b642d8a6": "59695d19-9994-4449-821b-dfe6b642d8a6",
+                    "00e9d3fb-c4d1-4265-802a-17cfee0fc20f": "00e9d3fb-c4d1-4265-802a-17cfee0fc20f",
+                    "6793dfcf-9da6-40f7-bbcd-c9276456bd91": "6793dfcf-9da6-40f7-bbcd-c9276456bd91",
+                    "2ac42fef-2dba-405c-87bb-a68d581dabbe": "2ac42fef-2dba-405c-87bb-a68d581dabbe",
+                    "ac17b963-d44c-41c6-86ad-e730a6574fc6": "ac17b963-d44c-41c6-86ad-e730a6574fc6",
+                    "b35a20b5-f168-417a-9e6d-3758e68e9d5c": "b35a20b5-f168-417a-9e6d-3758e68e9d5c"
+                },
+                "doc_id_dict": {},
+                "embeddings_dict": {}
+            }
+        }
+    }
+}

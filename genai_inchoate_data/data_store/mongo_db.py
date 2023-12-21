@@ -10,6 +10,21 @@ class MongoDB(StoreInterface):
             self.client = database_url
         self.db = self.client[database_name]
 
+    def insert_documents(self, collection_name, documents):
+        """
+        Insert multiple documents into the specified collection.
+
+        Parameters:
+        - collection_name (str): The name of the MongoDB collection.
+        - documents (list): A list of documents to be inserted.
+
+        Returns:
+        - list: The ObjectIds of the inserted documents.
+        """
+        collection = self.db[collection_name]
+        result = collection.insert_many(documents)
+        return [str(inserted_id) for inserted_id in result.inserted_ids]
+
     def insert_document(self, collection_name, document):
         """
         Insert a document into the specified collection.
