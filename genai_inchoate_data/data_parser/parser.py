@@ -61,11 +61,11 @@ class Parser:
 
     def iterate_documents(self, document):
         temp_document = copy.deepcopy(document)
-        docs = self.extract_text(document.get('metadata').get('name'))
+        docs = self.extract_text(document.get('metadata').get('file_path'))
         if isinstance(docs, dict):
             for page_number, text in docs.items():
                 temp_document['_id'] = f'{document.get("_id")}#{page_number}'
-                temp_document['doc_id'] = f'{document.get("_id")}#{page_number}'
+                # temp_document['doc_id'] = f'{document.get("_id")}#{page_number}'
                 temp_document['metadata']['page_label'] = page_number
                 self.add_text_and_hash(temp_document, text)
         else:
