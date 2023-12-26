@@ -1,10 +1,11 @@
-from llama_index import set_global_tokenizer
+import os
 from transformers import AutoTokenizer
 from llama_index import ServiceContext
+from llama_index.llms import Replicate
+from llama_index import set_global_tokenizer
 from llama_index.embeddings import HuggingFaceEmbedding
 from llama_index import VectorStoreIndex, SimpleDirectoryReader
-import os
-from llama_index.llms import Replicate
+from llama_index.response.notebook_utils import display_source_node
 
 os.environ["REPLICATE_API_TOKEN"] = "YOUR_REPLICATE_API_TOKEN"
 
@@ -30,5 +31,15 @@ index = VectorStoreIndex.from_documents(
     documents, service_context=service_context
 )
 
-index.storage_context.persist()
+# index.storage_context.persist()
 # index.vector_store.query()
+
+search_query_retriever = index.as_retriever(service_context=service_context)
+
+search_query_retrieved_nodes = search_query_retriever.retrieve(
+    "What happened after the thesis?"
+)
+print(f"search_query_retrieved_nodes : {search_query_retrieved_nodes}")
+
+for nodes in search_query_retrieved_nodes:
+    display_source_node(nodes, source_length=2000)
