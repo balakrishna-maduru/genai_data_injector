@@ -1,0 +1,12 @@
+{
+    "txt": "TextFileReader",
+    "text": "TextFileReader",
+    "pdf": "PdfFileReader",
+    "jpg": "ImageFileReader",
+    "jpeg": "ImageFileReader",
+    "png": "ImageFileReader",
+    "gif": "ImageFileReader",
+    "bmp": "ImageFileReader",
+    "svg": "ImageFileReader"
+  }
+  
